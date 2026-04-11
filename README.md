@@ -1,7 +1,8 @@
 # Antigravity Skills Collection
 
 > [!WARNING]
-> **Token Cost Warning**: As reported on r/google_antigravity, the IDE currently feeds every file in the skills folder into the context window for every prompt. Large skill folders can significantly increase token usage. Use with caution.
+> **Token Cost Warning**: As reported on r/google_antigravity, the IDE currently feeds **every** file in the skills folder into the context window for every prompt. Large skill folders can significantly increase token usage. Use with caution since
+Google will charge for the tokens used by the IDE. (See [Bug AG-859](https://github.com/dmccreary/antigravity-skills/issues/1))
 
 ## Supported Skills (Experimental)
 
