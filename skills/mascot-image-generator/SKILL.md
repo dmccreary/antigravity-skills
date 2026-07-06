@@ -9,14 +9,38 @@ The current version of Google's Antigravity does NOT support generating images w
 
 This skill allows you to reproducibly generate mascot images using the `generate_image` tool, while avoiding fake transparency checkerboards and removing white backgrounds perfectly.
 
+## Poses
+
+Each mascot has seven poses that can be used.  They are:
+
+1. **Neutral** - both hands at sides, facing camera
+2. **Welcome** - both arms outstretched in a welcoming gesture, facing camera
+3. **Thinking** - hands clasped in front, chin resting on hands, thoughtful expression, facing camera
+4. **Tip** - one hand at the side and one hand pointing up to a star above the hand with the pointer finger extended, looking up at the star, facing camera with a happy expression
+5. **Warning** - both arms out with palms forward with a STOP gesture, stern expression, facing camera
+6. **Encouragment** - one hand extended with a thumbs up gesture, happy expression, facing camera
+7. **Celebration** - jumping up with both arms outstretched above head, facing camera with confetti and stars falling around, happy expression
+
 ## Step-by-step Instructions
 
 1. **Modify the User's Image Prompt**:
-   - Strip any requests for a "transparent background".
-   - Inject the instruction: `Style must include a solid pure white background (#FFFFFF).`
+   - Ensure "transparent background" is in the prompt, in addition to the style instructions and if not, add "transparent background" to the prompt.
+   - Specify the output must be PNG format with an alpha channel (RGBA)
    - Inject the instruction: `Ensure the character has strong, continuous outlines.` (This helps the flood fill stop optimally).
 
-2. **Generate the Image**:
+2. **File Structure**:
+   - Each pose will be in a file named after the pose:
+   1. neutral.png
+   2. welcome.png
+   3. thinking.png
+   4. tip.png
+   5. warning.png
+   6. encouragement.png
+   7. celebration.png
+
+3. If multiple mascots are being generated, the file name will be named after the animal name. (butterfly, dog, bee, etc.). If only one mascot is being generated the enclosing directory name is `mascot` such as `docs/img/mascot`
+
+3. **Generate the Image**:
    - Use the `generate_image` tool with the modified prompt.
    - Note the absolute path of the generated `.png` artifact.
 
